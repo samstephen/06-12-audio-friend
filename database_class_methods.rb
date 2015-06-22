@@ -47,7 +47,7 @@ module DatabaseClassMethods
     end
 
     column_names_for_sql = column_names.join(", ")
-    individual_values_for_sql = individual_values.join ", "
+    individual_values_for_sql = individual_values.join(", ")
 
     CONNECTION.execute("INSERT INTO #{table_name} (#{column_names_for_sql}) VALUES (#{individual_values_for_sql});")
 
@@ -55,6 +55,30 @@ module DatabaseClassMethods
 
     self.new(options)
   end
+
+
+
+
+#  def save(options)
+#    table_name = self.to_s.pluralize.underscore
+#
+#    column_name = options.keys
+#    expr = options.values
+#    individual_expr = []
+#
+#    expr.each do |value|
+#      if expr.is_a?(String)
+#        individual_expr << "'#{value}'"
+#      else
+#        individual_expr << value
+#      end
+#    end
+#
+#    CONNECTION.execute("UPDATE #{table_name} SET #{column_name} = #{expr} WHERE id = #{@id};")
+#  end
+
+
+
 
 
   # Get a single row.
@@ -65,16 +89,9 @@ module DatabaseClassMethods
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
-    results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
-
-    results_as_objects = []
-
-    results.each do |results_hash|
-      results_as_objects << self.new(results_hash)
-    end
-
-    return results_as_objects
+    CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
   end
+
 
 
   # "Deletes" a row from a table

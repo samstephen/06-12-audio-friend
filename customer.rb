@@ -45,8 +45,8 @@ class Customer
   # Returns a Customer object
   def self.find_as_object(customer_id)
     @id = customer_id
-    results = Customer.find(customer_id).first
-    Customer.new(results)
+    result = Customer.find(customer_id).first
+    Customer.new(result)
   end
 
 

@@ -31,42 +31,16 @@ class Product
 
 
 
+
   # Find a customer name by id using find method from database_class_methods.rb
   #
-  # product_id - The products table's Integer ID.
+  #customer_id - The customers table's Integer ID.
   #
   # Returns a Customer object
   def self.find_as_object(product_id)
     @id = product_id
-    results = Product.find(product_id).first
-
-    temp_name = results["product_name"]
-    temp_cost = results["current_cost"]
-    temp_category = results["category"]
-    temp_brand = results["brand"]
-    temp_retailer = results["retailer"]
-
-    Product.new(product_id, temp_name, temp_cost, temp_category, temp_brand, temp_retailer)
-  end
-
-
-
-
-
-
-
-
-  # Change product name by id
-  #
-  # product_id - The products table's Integer ID.
-  #
-  # Update the name of a product
-
-  #
-  #
-  # Update the current_cost of a product
-  def change_product_cost(current_cost)
-    CONNECTION.execute("UPDATE products SET cost = #{current_cost} WHERE id = #{@id}")
+    result = Product.find(product_id).first
+    Product.new(result)
   end
 end
 
