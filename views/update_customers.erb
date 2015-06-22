@@ -1,0 +1,7 @@
+<p>Click the customer whose name you want to change.</p>
+
+<ul>
+  <% Customer.all.each do |customer| %>
+      <li><a href="/change_name_form/<%= customer.id %>"><%= customer.name %></a></li>
+  <% end %>
+</ul>

@@ -1,0 +1,14 @@
+<!--
+This form submits to "/change_customer_name/THE_customer'S_ID".
+We don't need to know the customer's ID here, but we will need it
+in the next step - to update the correct row in the database - so
+we store the ID here and send it to the next route handler.
+The form field is used to collect the new name.
+-->
+
+<!-- Example: <form action="/change_customer_name/4"> -->
+<form action="/change_customer_name/<%= params["x"] %>">
+  <input type="name" name="name" placeholder="New name">
+
+  <input type="submit">
+</form>
