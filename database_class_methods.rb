@@ -65,7 +65,7 @@ module DatabaseClassMethods
   def find(record_id)
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
-    CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
+    results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{record_id}")
 
     results_as_objects = []
 

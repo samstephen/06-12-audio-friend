@@ -7,8 +7,10 @@ The form field is used to collect the new name.
 -->
 
 <!-- Example: <form action="/change_customer_name/4"> -->
-<form action="/change_customer_name/<%= params["x"] %>">
-  <input type="name" name="name" placeholder="New name">
+<form action="/change_customer_name">
+  <input type="name" name="name" placeholder="New name: ">
+
+  <input type="hidden" name="x" value="<%= params["x"] %>">
 
   <input type="submit">
 </form>

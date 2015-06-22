@@ -37,56 +37,56 @@ require_relative "database_instance_methods.rb"
 
 #define some customers
 # Customer.add(name, card, phone, street, city, state, zip)
-Customer.add({'name' => 'Sam Stephen', 'card' => '1234123412341234', 'phone' => '4024324292',
-              'street' => '221 N 6', 'city' => 'Elmwood', 'state' => 'NE', 'zip' => '68349'})                  #1
-Customer.add({'name' => 'Joe Poole', 'card' => '4567456745674567', 'phone' => '4022971421',
-              'street' => '1324 S 5', 'city' => 'Lincoln', 'state' => 'NE', 'zip' => '68501'})                 #2
-Customer.add({'name' => 'Daniel Mariscal', 'card' => '9876987698769876', 'phone' => '4025555555',
-              'street' => '134 Regency Court', 'city' => 'Omaha', 'state' => 'NE', 'zip' => '68234'})          #3
-
-#define some products
-# Product.add(product_name, 'current_cost', 'category', 'brand', 'retailer')
-Product.add({'product_name' => 'KeyLab 61',                         'current_cost' => 499.00,
-             'category' => 'Instrument',  'brand' => 'Arturia',       'retailer' => 'Guitar Center'})          #1
-Product.add({'product_name' => 'Axiom Pro 25',                      'current_cost' => 399.99,
-             'category' => 'Instrument',  'brand' => 'Avid',          'retailer' => 'Best Buy'})               #2
-Product.add({'product_name' => 'Blue Yeti USB Microphone',          'current_cost' => 129.99,
-             'category' => 'Recording',   'brand' => 'Blue',          'retailer' => 'Best Buy'})               #3
-Product.add({'product_name' => 'KRK KNS 8400 - headphones',         'current_cost' => 149.99,
-             'category' => 'Recording',   'brand' => 'KRK Systems',   'retailer' => 'Guitar Center'})          #4
-Product.add({'product_name' => 'KRK VXT 8 Powered Studio Monitor',  'current_cost' => 599.00,
-             'category' => 'Recording',   'brand' => 'KRK Systems',   'retailer' => 'Guitar Center'})          #5
-Product.add({'product_name' => 'Pro Tools 9',                       'current_cost' => 399.00,
-             'category' => 'Software',    'brand' => 'Avid',          'retailer' => 'Best Buy'})               #6
-Product.add({'product_name' => 'Logic Pro X',                       'current_cost' => 199.00,
-             'category' => 'Software',    'brand' => 'Apple',         'retailer' => 'Guitar Center'})          #7
-
-
-#define some orders
-# Order.add(customer_id, date)
-Order.add({'customer_id' => 1, 'purchased_on' => '12-20-2010'})  #1(primary key)
-Order.add({'customer_id' => 1, 'purchased_on' => '05-16-2011'})  #2
-Order.add({'customer_id' => 2, 'purchased_on' => '01-05-2012'})  #3
-Order.add({'customer_id' => 1, 'purchased_on' => '07-20-2012'})  #4
-Order.add({'customer_id' => 2, 'purchased_on' => '03-22-2014'})  #5
-Order.add({'customer_id' => 2, 'purchased_on' => '06-01-2015'})  #6
-Order.add({'customer_id' => 1, 'purchased_on' => '06-01-2015'})  #7
-
-
-#define some order_items
-# OrderItem.add(product_id, order_id, quantity)
-OrderItem.add({'product_id' => 1, 'order_id' => 2, 'quantity' => 1})  #1(customer_id)
-OrderItem.add({'product_id' => 2, 'order_id' => 1, 'quantity' => 1})  #1
-OrderItem.add({'product_id' => 3, 'order_id' => 5, 'quantity' => 1})  #2
-OrderItem.add({'product_id' => 4, 'order_id' => 4, 'quantity' => 1})  #1
-OrderItem.add({'product_id' => 5, 'order_id' => 3, 'quantity' => 1})  #2
-OrderItem.add({'product_id' => 6, 'order_id' => 6, 'quantity' => 2})  #2
-OrderItem.add({'product_id' => 7, 'order_id' => 7, 'quantity' => 1})  #1
-OrderItem.add({'product_id' => 7, 'order_id' => 5, 'quantity' => 1})  #1
+#Customer.add({'name' => 'Sam Stephen', 'card' => '1234123412341234', 'phone' => '4024324292',
+#              'street' => '221 N 6', 'city' => 'Elmwood', 'state' => 'NE', 'zip' => '68349'})         #1
+#Customer.add({'name' => 'Joe Poole', 'card' => '4567456745674567', 'phone' => '4022971421',
+#              'street' => '1324 S 5', 'city' => 'Lincoln', 'state' => 'NE', 'zip' => '68501'})        #2
+#Customer.add({'name' => 'Daniel Mariscal', 'card' => '9876987698769876', 'phone' => '4025555555',
+#              'street' => '134 Regency Court', 'city' => 'Omaha', 'state' => 'NE', 'zip' => '68234'}) #3
+#
+##define some products
+## Product.add(product_name, 'current_cost', 'category', 'brand', 'retailer')
+#Product.add({'product_name' => 'KeyLab 61', 'current_cost' => 499.00,
+#             'category' => 'Instrument', 'brand' => 'Arturia', 'retailer' => 'Guitar Center'})      #1
+#Product.add({'product_name' => 'Axiom Pro 25', 'current_cost' => 399.99,
+#             'category' => 'Instrument', 'brand' => 'Avid', 'retailer' => 'Best Buy'})              #2
+#Product.add({'product_name' => 'Blue Yeti USB Microphone', 'current_cost' => 129.99,
+#             'category' => 'Recording', 'brand' => 'Blue', 'retailer' => 'Best Buy'})               #3
+#Product.add({'product_name' => 'KRK KNS 8400 - headphones', 'current_cost' => 149.99,
+#             'category' => 'Recording', 'brand' => 'KRK Systems', 'retailer' => 'Guitar Center'})   #4
+#Product.add({'product_name' => 'KRK VXT 8 Powered Studio Monitor', 'current_cost' => 599.00,
+#             'category' => 'Recording', 'brand' => 'KRK Systems', 'retailer' => 'Guitar Center'})   #5
+#Product.add({'product_name' => 'Pro Tools 9', 'current_cost' => 399.00,
+#             'category' => 'Software', 'brand' => 'Avid', 'retailer' => 'Best Buy'})                #6
+#Product.add({'product_name' => 'Logic Pro X', 'current_cost' => 199.00,
+#             'category' => 'Software', 'brand' => 'Apple', 'retailer' => 'Guitar Center'})          #7
+#
+#
+##define some orders
+## Order.add(customer_id, date)
+#Order.add({'customer_id' => 1, 'purchased_on' => '12-20-2010'})  #1(primary key)
+#Order.add({'customer_id' => 1, 'purchased_on' => '05-16-2011'})  #2
+#Order.add({'customer_id' => 2, 'purchased_on' => '01-05-2012'})  #3
+#Order.add({'customer_id' => 1, 'purchased_on' => '07-20-2012'})  #4
+#Order.add({'customer_id' => 2, 'purchased_on' => '03-22-2014'})  #5
+#Order.add({'customer_id' => 2, 'purchased_on' => '06-01-2015'})  #6
+#Order.add({'customer_id' => 1, 'purchased_on' => '06-01-2015'})  #7
+#
+#
+##define some order_items
+## OrderItem.add(product_id, order_id, quantity)
+#OrderItem.add({'product_id' => 1, 'order_id' => 2, 'quantity' => 1})  #1(customer_id)
+#OrderItem.add({'product_id' => 2, 'order_id' => 1, 'quantity' => 1})  #1
+#OrderItem.add({'product_id' => 3, 'order_id' => 5, 'quantity' => 1})  #2
+#OrderItem.add({'product_id' => 4, 'order_id' => 4, 'quantity' => 1})  #1
+#OrderItem.add({'product_id' => 5, 'order_id' => 3, 'quantity' => 1})  #2
+#OrderItem.add({'product_id' => 6, 'order_id' => 6, 'quantity' => 2})  #2
+#OrderItem.add({'product_id' => 7, 'order_id' => 7, 'quantity' => 1})  #1
+#OrderItem.add({'product_id' => 7, 'order_id' => 5, 'quantity' => 1})  #1
 
 # ----------------------------------------------------------------------------------------------------------------------
 
-#################################################### BEGIN WEB UX ######################################################
+############################################## BEGIN WEB UX ###############################################
 
 
 # ---------------------------------------------------------------------
@@ -160,7 +160,7 @@ end
 #
 # So we have a customer's ID and the customer's new name. That's enough
 # information for us to change the database correctly!
-get "/change_customer_name/:x" do
+get "/change_customer_name" do
   # `params` stores information from BOTH the path (:x) and from the
   # form's submitted information. So right now,
   # `params` is {"x" => "3", "name" => "Marlene"}
